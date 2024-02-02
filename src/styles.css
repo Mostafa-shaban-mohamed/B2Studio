@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: oklch(16.93% .004 285.95);
+    color: white;
+}
+
+html{
+    scroll-behavior: smooth;
+}

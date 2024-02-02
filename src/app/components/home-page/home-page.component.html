@@ -1,0 +1,151 @@
+<div class="d-flex">
+	<div ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills flex-column nav-sidebar" orientation="vertical">
+		<ng-container ngbNavItem="top">
+			<button class="btn-sidebar" ngbNavLink>Home Page</button>
+			<ng-template ngbNavContent>
+                <div class="container-fluid">
+                    <div style="text-align: center;">
+                        <img src="./assets/Logo02_transparent_large.png" class="responsive" id="rotate-logo" alt="logo" />
+                    </div>
+                    <br>
+                    <h1 class="logo-text">B2Studio</h1>
+                    <br>
+                    <h4 class="description-text" style="text-align: center;">Design and development of special software, plugins and Front-End templates to suit all your needs </h4>
+                    <h4 class="description-text" style="text-align: center;">Do not hesitate to request your software now.</h4>
+                </div>
+			</ng-template>
+		</ng-container>
+		<!-- <ng-container ngbNavItem="about-us">
+			<button class="btn-sidebar" ngbNavLink>About Us</button>
+			<ng-template ngbNavContent>
+				<div class="container-fluid" style="margin-top: 10vh;">
+                    <h1 style="text-align: center;">Welcome to <i>B2Studio</i></h1>
+                    <hr>
+                    <p class="card-text">
+                        <i>B2Studio</i> works with dedication 
+                        to create innovative websites that express your identity and brand. 
+                        We take care of your design details and offer you a unique website 
+                        that features your unique personality and style. 
+                        Your design is your identity, and we will work with you to implement 
+                        all requests and ideas to turn them into reality.
+                    </p>
+                </div>
+			</ng-template>
+		</ng-container> -->
+        <ng-container ngbNavItem="previous-work">
+			<button class="btn-sidebar" ngbNavLink>Previous Work</button>
+			<ng-template ngbNavContent>
+				<div class="container-fluid" style="margin-top: 10vh;">
+                    <h1 style="text-align: center;">Some of Our Business and Success Partners</h1>
+                    <hr>
+                    <div class="col-md-12 row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <a href="https://mostafa-shaban-mohamed.github.io/El-Nota-Portal/Home">
+                                        <img width="60%" height="auto" src="./assets/elnota.png" alt="el-nota">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <p>
+                                        El-Nota is Note-Planning / List-Making Web App. 
+                                        El-Nota helps in creating and managing your daily and schedule tasks and plans. 
+                                        With Friendly Displaying to your plans to increase your productivity.
+                                    </p>
+                                    <p>For More details click on Image...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</ng-template>
+		</ng-container>
+		<ng-container ngbNavItem="services">
+			<button class="btn-sidebar" ngbNavLink>Services</button>
+			<ng-template ngbNavContent>
+				<div class="container-fluid" style="margin-top: 10vh;">
+                    <h1 style="text-align: center;">Our Services</h1>
+                    <hr>
+                    <div class="col-md-12 row">
+                        <div class="col-md-4" style="margin-top: 20px;">
+                            <div class="card-columns">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Portfolio
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            We help you design and build your own portfolio.
+                                            With your own brand and identity, 
+                                            you can start you online establishment with us.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-top: 20px;">
+                            <div class="card-columns">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Small Business
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            We can help you establish a powerful start for your brand, product or service.
+                                            We will help you put your designs to good use.
+                                            We design and build websites for small to medium business based on your theme.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-top: 20px;">
+                            <div class="card-columns">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Templates
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            May be you have the experience of handling websites,
+                                            but you don't have time to build one, we can help you with that.
+                                            You can buy our templates which are ready on hosting and start your online journey.
+                                        </p>
+                                    </div>
+                                    <div class="card-footer" style="text-align: center;">
+                                        <button disabled class="btn btn-outline-danger">Start Shopping</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</ng-template>
+		</ng-container>
+        <!-- <ng-container ngbNavItem="contact-us">
+			<button class="btn-sidebar" ngbNavLink>Contact Us</button>
+			<ng-template ngbNavContent>
+				<div class="container-fluid" style="margin-top: 10vh;">
+                    <h1 style="text-align: center;">Contact Us</h1>
+                    <hr>
+                    <div class="col-md-12 row">
+                        <div class="col-md-4">
+                            <h6>Email</h6>
+                            <ngb-toast style="background-color: #242424;" [autohide]="false">{{'beto2studio@gmail.com'}}</ngb-toast>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Insta</h6>
+                            <ngb-toast style="background-color: #242424;" [autohide]="false">{{'@example.com'}}</ngb-toast>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>LinkedIn</h6>
+                            <ngb-toast style="background-color: #242424;" [autohide]="false">{{'@example.com'}}</ngb-toast>
+                        </div>
+                    </div>
+                </div>
+			</ng-template>
+		</ng-container> -->
+	</div>
+
+	<div [ngbNavOutlet]="nav" class="ms-4" style="width: 100vw; margin-right: 1.5rem;"></div>
+</div>
