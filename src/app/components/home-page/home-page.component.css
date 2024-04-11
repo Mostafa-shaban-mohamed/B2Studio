@@ -1,7 +1,7 @@
 /* nav */
 .nav-sidebar{
     width: max(10vw, 120px);
-    height: 84vh;
+    /* height: 84vh; */
     padding: 10px 5px;
     padding-bottom: 0;
     border-right: 1px solid oklch(25.16% .008 308.11);
@@ -18,8 +18,12 @@
     color: white !important;
 }
 
+.container-fluid{
+    min-height: 84vh;
+}
+
 .responsive{
-    max-width: 20vw;
+    max-width: 10vw;
     height: auto;
     margin-top: 10vh;
 }
@@ -35,7 +39,7 @@
 }
 .card-header{
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 .card-text{
     text-align: center;
