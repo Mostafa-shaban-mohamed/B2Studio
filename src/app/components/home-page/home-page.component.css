@@ -58,3 +58,7 @@
         font-size: 4vw;
     }
 }
+
+.active{
+    color: white !important;
+}
