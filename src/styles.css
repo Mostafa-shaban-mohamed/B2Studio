@@ -9,3 +9,80 @@ body{
 html{
     scroll-behavior: smooth;
 }
+
+p{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.img-rounded{
+  border-radius: 50%;
+  width: 10vw;
+  height: auto;
+}
+
+/* nav */
+.nav-sidebar{
+  width: max(10vw, 120px);
+  /* height: 84vh; */
+  padding: 10px 5px;
+  padding-bottom: 0;
+  border-right: 1px solid oklch(25.16% .008 308.11);
+}
+
+.btn-sidebar{
+  padding: 4vh 0;
+  margin: 1vh 0;
+  background-color: transparent !important;
+  color: oklch(70.9% .015 304.04) !important;
+}
+
+.btn-sidebar:hover{
+  color: white !important;
+}
+
+.container-fluid{
+  min-height: 84vh;
+}
+
+.responsive{
+  max-width: 10vw;
+  height: auto;
+  margin-top: 10vh;
+}
+
+.logo-text{
+  text-align: center;
+  font-size: 4vw;
+}
+
+.card{
+  color: white;
+  background-color: #242424;
+  min-height: 200px;
+  max-height: 500px;
+}
+.card-header{
+  text-align: center;
+  font-size: 1.8rem;
+}
+.card-text{
+  text-align: center;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 800px) {
+  .responsive{
+      max-width: 50vw;
+      height: auto;
+  }
+  .logo-text{
+      font-size: 10vw;
+  }
+  .description-text{
+      font-size: 4vw;
+  }
+}
+
+.active{
+  color: white !important;
+}
