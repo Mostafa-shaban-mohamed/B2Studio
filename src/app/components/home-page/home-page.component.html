@@ -1,39 +1,80 @@
-<div class="d-flex">
-	<div ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills flex-column nav-sidebar" orientation="vertical">
-		<ng-container ngbNavItem="top">
-			<button class="btn-sidebar" ngbNavLink>Home Page</button>
-			<ng-template ngbNavContent>
-                <div class="container-fluid">
-                    <div style="text-align: center;">
-                        <img src="./assets/Logo02_transparent_large.png" class="responsive" id="rotate-logo" alt="logo" />
-                    </div>
-                    <br>
-                    <h1 class="logo-text">B2Studio</h1>
-                    <br>
-                    <h4 class="description-text" style="text-align: center;">Let us be your software team and help you achieve your business goals with customized solutions.</h4>
-                    <h4 class="description-text" style="text-align: center;">Discover the possibilities and unlock your potential by exploring what we do.</h4>
-                </div>
-			</ng-template>
-		</ng-container>
-    <ng-container ngbNavItem="previous-work">
-			<button class="btn-sidebar" ngbNavLink>Projects & Partners</button>
-			<ng-template ngbNavContent>
-				<app-partners></app-partners>
-		  </ng-template>
-		</ng-container>
-		<ng-container ngbNavItem="services">
-			<button class="btn-sidebar" ngbNavLink>Services</button>
-			<ng-template ngbNavContent>
-        <app-services></app-services>
-			</ng-template>
-		</ng-container>
-    <ng-container ngbNavItem="templates">
-			<button class="btn-sidebar" ngbNavLink>Templates</button>
-			<ng-template ngbNavContent>
-				<app-templates></app-templates>
-			</ng-template>
-		</ng-container>
-	</div>
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: rgba(0,0,0,0.95); border-bottom: 1px solid var(--border-color); backdrop-filter: blur(10px);">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" (click)="active = 'top'; $event.preventDefault()">
+            <img src="./assets/Logo02_transparent.png" alt="B2Studio" height="50" class="me-3">
+            <span style="font-size: 1.5rem; color: var(--text-main);">B2Studio</span>
+        </a>
 
-	<div [ngbNavOutlet]="nav" class="ms-4" style="width: 100vw; margin-right: 1.5rem;"></div>
-</div>
+        <div class="d-flex overflow-auto ms-auto">
+            <ul ngbNav #nav="ngbNav" [(activeId)]="active" (navChange)="onNavChange($event)" class="nav-pills">
+                <li [ngbNavItem]="'top'">
+                    <a ngbNavLink>Home</a>
+                    <ng-template ngbNavContent>
+                        <div class="container hero-container d-flex flex-column justify-content-center align-items-center text-center" style="min-height: 85vh; padding: 2rem;">
+                            <!-- Glow Effect -->
+                            <div class="hero-glow"></div>
+                            
+                            <img src="./assets/Logo02_transparent_large.png" class="mb-4 img-fluid animate-up delay-1" style="max-width: 180px; filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.2));" alt="logo" />
+                            
+                            <h1 class="display-4 mb-3 animate-up delay-2" style="color: var(--text-main); font-weight: 500; letter-spacing: -0.02em;">
+                                B2<span class="text-accent">Studio</span>
+                            </h1>
+                            
+                            <p class="lead mb-5 animate-up delay-3" style="max-width: 700px; font-weight: 300; line-height: 1.8; color: var(--text-muted); font-size: 1.15rem; text-transform: none;">
+                                Your dedicated software team. We build customized B2B solutions to help you achieve your business goals with precision and elegance.
+                            </p>
+                            
+                            <div class="d-flex gap-4 flex-wrap justify-content-center animate-up delay-4">
+                                <button class="btn btn-primary btn-lg" (click)="active = 'services'">Our Services</button>
+                                <button class="btn btn-outline-light btn-lg" (click)="active = 'previous-work'">View Work</button>
+                            </div>
+                        </div>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="'previous-work'">
+                    <a ngbNavLink>Projects</a>
+                    <ng-template ngbNavContent>
+                        <div class="fade-in-content">
+                            <app-partners></app-partners>
+                        </div>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="'services'">
+                    <a ngbNavLink>Services</a>
+                    <ng-template ngbNavContent>
+                        <div class="fade-in-content">
+                            <app-services></app-services>
+                        </div>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="'templates'">
+                    <a ngbNavLink>Templates</a>
+                    <ng-template ngbNavContent>
+                        <div class="fade-in-content">
+                            <app-templates></app-templates>
+                        </div>
+                    </ng-template>
+                </li>
+                <li [ngbNavItem]="'solutions'">
+                    <a ngbNavLink>Solutions</a>
+                    <ng-template ngbNavContent>
+                        <div class="fade-in-content">
+                            <app-software-solutions></app-software-solutions>
+                        </div>
+                    </ng-template>
+                </li>
+                <!-- <li [ngbNavItem]="'contact'">
+                    <a ngbNavLink>Contact</a>
+                    <ng-template ngbNavContent>
+                        <div class="fade-in-content">
+                            <app-contact></app-contact>
+                        </div>
+                    </ng-template>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div [ngbNavOutlet]="nav"></div>
+

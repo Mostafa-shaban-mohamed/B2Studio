@@ -1,88 +1,241 @@
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-
-body{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: oklch(16.93% .004 285.95);
-    color: white;
+/* Modern Dark Theme Variables */
+:root {
+    --bg-body: #000000;
+    --bg-surface: #121212;
+    --bg-surface-hover: #1a1a1a;
+    --accent-color: #d4af37; /* Metallic Gold */
+    --accent-hover: #f3cf55;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --border-color: #333333;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Raleway', sans-serif;
+    --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-html{
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Raleway:wght@300;400;500&display=swap');
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    font-size: 0.95rem; /* Slightly smaller base size */
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-p{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
-.img-rounded{
-  border-radius: 50%;
-  width: 10vw;
-  height: auto;
+/* Specific heading sizes overrides if needed */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+    color: var(--text-muted);
+    font-weight: 300;
 }
 
-/* nav */
-.nav-sidebar{
-  width: max(10vw, 120px);
-  /* height: 84vh; */
-  padding: 10px 5px;
-  padding-bottom: 0;
-  border-right: 1px solid oklch(25.16% .008 308.11);
+a {
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.3s ease;
 }
 
-.btn-sidebar{
-  padding: 4vh 0;
-  margin: 1vh 0;
-  background-color: transparent !important;
-  color: oklch(70.9% .015 304.04) !important;
+a:hover {
+    color: var(--accent-color);
 }
 
-.btn-sidebar:hover{
-  color: white !important;
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
 }
 
-.container-fluid{
-  min-height: 84vh;
+::-webkit-scrollbar-track {
+    background: var(--bg-body);
 }
 
-.responsive{
-  max-width: 10vw;
-  height: auto;
-  margin-top: 10vh;
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 0;
 }
 
-.logo-text{
-  text-align: center;
-  font-size: 4vw;
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
 }
 
-.card{
-  color: white;
-  background-color: #242424;
-  min-height: 200px;
-  max-height: 500px;
-}
-.card-header{
-  text-align: center;
-  font-size: 1.8rem;
-}
-.card-text{
-  text-align: center;
-  object-fit: contain;
+/* Luxury Card Styling */
+.card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 0; /* Sharp corners for luxury feel */
+    box-shadow: none;
+    transition: all 0.4s ease;
+    color: var(--text-main);
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
 }
 
-@media screen and (max-width: 800px) {
-  .responsive{
-      max-width: 50vw;
-      height: auto;
-  }
-  .logo-text{
-      font-size: 10vw;
-  }
-  .description-text{
-      font-size: 4vw;
-  }
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
 }
 
-.active{
-  color: white !important;
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: var(--card-shadow);
 }
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid var(--border-color);
+    padding: 2rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #000;
+    border-radius: 0;
+    padding: 10px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: #000;
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    border-radius: 0;
+    border-color: var(--border-color);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--bg-surface);
+    border-color: var(--text-main);
+    color: var(--text-main);
+}
+
+.btn-outline-primary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    color: #000;
+}
+
+/* Utility Classes */
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: 3rem;
+    color: var(--text-main);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 20px auto 0;
+}
+
+/* Navbar overrides */
+.nav-pills .nav-link {
+    color: var(--text-muted);
+    border-radius: 0;
+    padding: 1rem 2rem;
+    transition: all 0.3s;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    background: transparent !important;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-pills .nav-link.active, 
+.nav-pills .show > .nav-link {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.nav-pills .nav-link:hover:not(.active) {
+    color: var(--text-main);
+}
+
+.navbar-brand span {
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+}
+
+

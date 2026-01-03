@@ -1,0 +1,53 @@
+<div class="container py-5">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <p class="text-center mb-5" style="color: var(--text-muted);">
+                Ready to elevate your business? Contact us to discuss your custom software solution.
+            </p>
+
+            <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" formControlName="name" placeholder="John Doe"
+                                [class.is-invalid]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" formControlName="email" placeholder="john@example.com"
+                                [class.is-invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" formControlName="subject" placeholder="Project Inquiry"
+                                [class.is-invalid]="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" formControlName="message" placeholder="Tell us about your project..."
+                                [class.is-invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg px-5" [disabled]="isSubmitting">
+                            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="text-center mt-5 pt-4 border-top" style="border-color: var(--border-color) !important;">
+                <p class="mb-2">Or email us directly at</p>
+                <a href="mailto:beto2studio@gmail.com" class="fs-5 text-accent text-decoration-none">{{ 'beto2studio@gmail.com' }}</a>
+            </div>
+        </div>
+    </div>
+</div>

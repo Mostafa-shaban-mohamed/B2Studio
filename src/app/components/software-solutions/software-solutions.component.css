@@ -1,0 +1,71 @@
+:host {
+    display: block;
+}
+
+.solution-card {
+    background: rgba(20, 20, 20, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+li{
+  list-style: none;
+}
+
+.solution-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.2);
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    font-size: 1.75rem;
+    letter-spacing: 0.05em;
+}
+
+.card-text {
+    font-family: var(--font-body);
+    color: var(--text-main) !important;
+    line-height: 1.6;
+}
+
+.btn-visit {
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    background: transparent;
+}
+
+.btn-visit:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: black;
+}
+
+.video-container {
+    min-height: 300px;
+    background: #000;
+}
+
+/* Animations */
+.animate-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
